@@ -35,8 +35,17 @@ const uncompletedToDo = (req, res) => {
 };
 
 const updateToCompleted = (req, res) => {
+    const name = req.body.name;
+    const completed = req.body.completed;
     DbService((db) => {
-        ToDoService.updateToCompleted(db, (documents) => {
+        ToDoService.updateToCompleted(db, name, completed);
+    })
+};
+
+const deleteToDo = (req, res) => {
+    const name = req.body.name;
+    DbService((db) => {
+        ToDoService.deleteToDo(db, name, (documents) => {
             res.json(documents);
         })
     })
@@ -47,3 +56,4 @@ module.exports.addToDo = addToDo;
 module.exports.completedToDo = completedToDo;
 module.exports.uncompletedToDo = uncompletedToDo;
 module.exports.updateToCompleted = updateToCompleted;
+module.exports.deleteToDo = deleteToDo;

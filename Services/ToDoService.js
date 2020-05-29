@@ -24,9 +24,14 @@ const addToDo = (db, name) => {
     collection.insertOne({name: name, completed: false});
 };
 
-const updateToCompleted = (db, changeCompleted, completed) => {
+const updateToCompleted = (db, name, completed) => {
     let collection = db.collection('ToDo');
-    collection.updateOne({name: changeCompleted}, {$set: {completed: completed}});
+    collection.updateOne({name: name}, {$set: {completed: completed}});
+};
+
+const deleteToDo = (db, name) => {
+    let collection = db.collection('ToDo');
+    collection.deleteOne({name: name});
 };
 
 module.exports.getAllToDo = getAllToDo;
@@ -34,4 +39,5 @@ module.exports.addToDo = addToDo;
 module.exports.getCompletedToDo = getCompletedToDo;
 module.exports.getUncompletedToDo = getUncompletedToDo;
 module.exports.updateToCompleted = updateToCompleted;
+module.exports.deleteToDo = deleteToDo;
 

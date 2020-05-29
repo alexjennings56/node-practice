@@ -1,0 +1,25 @@
+[{
+  "_id": {
+    "$oid": "5ecfc533c6acd0da7f491e97"
+  },
+  "name": "shopping",
+  "completed": null
+},{
+  "_id": {
+    "$oid": "5ecfc555c6acd0da7f491e98"
+  },
+  "name": "cleaning",
+  "completed": false
+},{
+  "_id": {
+    "$oid": "5ecfc561c6acd0da7f491e99"
+  },
+  "name": "exercise",
+  "completed": true
+},{
+  "_id": {
+    "$oid": "5ecfd68acee3b96ea040def1"
+  },
+  "name": "run",
+  "completed": false
+}]
